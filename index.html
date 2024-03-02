@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Stock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Stock Actual</h1>
+        <!-- <div class="search">
+            <input type="text" id="search" placeholder="Buscar por nombre" onkeyup="search()">
+        </div> -->
+        <div class="table">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <!-- cuerpo de la tabla -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Creo linea de separacion -->
+        <hr>
+        <div id="ajustes">
+            <h1>Ajustes</h1>
+            <div class="row">
+                <div class="tipo-ajuste">
+                    <label for="tipo-ajuste">Tipo de Ajuste</label>
+                    <select name="tipo-ajuste" id="tipo-ajuste">
+                        <option value="+">Ajuste Positivo</option>
+                        <option value="-">Ajuste Negativo</option>
+                    </select>
+                    <label for="producto-ajuste">Producto</label>
+                    <select name="producto-ajuste" id="producto-ajuste"></select>
+                    <input type="number" id="cantidad-ajuste" placeholder="Cantidad" min="0">
+                    <button id="btn-ajustar">Ajustar</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="agregar-producto">
+            <h1>Agregar Producto</h1>
+            <label for="producto-agregar">Nombre</label>
+            <input type="text" name="producto-agregar" id="producto-agregar" placeholder="XXXX-#L-COLOR">
+            <input type="number" id="cantidad-inicial" placeholder="Cantidad Inicial" min="0">
+            <button id="btn-agregar">Agregar</button>
+        </div>
+        <hr>
+        <div id="eliminar-producto">
+            <h1>Eliminar Producto</h1>
+            <label for="producto-eliminar">Producto a Eliminar</label>
+            <select name="producto-eliminar" id="producto-eliminar"></select>
+            <button id="btn-eliminar" class="btn-danger">Eliminar</button>
+        </div>
+
+</body>
+</html>
