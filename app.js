@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Cargo los productos
 function cargarProductos() {
-   let productos = [
-    {nombre:'2890-1-BL',stock:10},
+  let productos = JSON.parse(localStorage.getItem('productos'));
+  if (!productos) {
+      productos = [
+    {nombre:'2890-1-BL',stock:0},
     {nombre:'2890-1-NE',stock:0},
     {nombre:'2890-2-BL',stock:0},
     {nombre:'2890-2-NE',stock:0},
@@ -27,7 +29,7 @@ function cargarProductos() {
 
     // inserto los productos al local storage
     localStorage.setItem('productos', JSON.stringify(productos));
-
+  }
     // Muestro los productos
     mostrarProductos();
 }
@@ -43,6 +45,7 @@ function mostrarProductos() {
     let productoEliminar = document.querySelector("#producto-eliminar");
     productoEliminar.innerHTML = '';
     selectProductosAjuste.innerHTML = '';
+    
     productos.forEach(producto => {
         let tr = document.createElement('tr');
         tr.innerHTML = `
@@ -114,7 +117,7 @@ function agregarProducto() {
     alert("El producto ya existe");
     return;
   }
-  productos.push({ nombre: producto, stock: stock });
+  productos.push({ nombre: producto, stock: parseInt(stock) });
   localStorage.setItem("productos", JSON.stringify(productos));
   mostrarProductos();
   document.querySelector("#producto-agregar").value = "";
